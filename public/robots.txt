@@ -1,0 +1,6 @@
+# Allow all search engines to index your site except admin pages
+User-agent: *
+Disallow: /admin/
+Allow: /
+
+

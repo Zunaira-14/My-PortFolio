@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Title -->
+    <title>Zunaira Abid – MERN Stack Developer | Portfolio</title>
+
+    <!-- Meta Description -->
+    <meta
+      name="description"
+      content="Zunaira Abid is a MERN Stack Developer skilled in React, Tailwind, MongoDB. View projects, skills and contact details."
+    />
+
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:title" content="Zunaira Abid – MERN Stack Developer" />
+    <meta
+      property="og:description"
+      content="Portfolio showcasing MERN Stack and React projects."
+    />
+    <meta property="og:image" content="/portfolio-preview.png" />
+    <meta property="og:type" content="website" />
+    <!-- <meta property="og:url" content="https://zunairaabid.dev" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="Zunaira abid"/>
+    <!-- Devicons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+ <link rel="icon" href="/favicon.ico" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <!-- Page Styling -->
+    <style>
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        min-height: 100vh;
+        background: linear-gradient(to bottom, #17191e, #1c1c1c, #3f4041);
+        color: white;
+        position: relative;
+      }
+
+      /* Raindrop Effect */
+      .raindrops {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background-image: repeating-linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.08) 0px,
+          rgba(255, 255, 255, 0.08) 1px,
+          transparent 1px,
+          transparent 12px
+        );
+        background-size: 2px 20px;
+        animation: rain 0.6s linear infinite;
+        z-index: 1;
+      }
+
+      @keyframes rain {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 0 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root" style="position: relative; z-index: 10;"></div>
+    <div class="raindrops"></div>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

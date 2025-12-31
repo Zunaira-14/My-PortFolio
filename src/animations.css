@@ -1,0 +1,246 @@
+/* ===== Background lightning effect ===== */
+.lightning-bg {
+  background: radial-gradient(circle at top, rgba(148, 163, 184, 0.15), #020617 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional subtle flash */
+.lightning-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(250, 250, 255, 0.4), transparent 60%);
+  opacity: 0;
+  animation: lightning-flash 6s infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes lightning-flash {
+  0%, 80%, 100% { opacity: 0; }
+  82%, 84% { opacity: 0.8; }
+  88% { opacity: 0.3; }
+}
+
+/* ===== Strong clear line rain (ONLY THIS) ===== */
+.rain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(148, 163, 184, 0.75) 0px,
+    rgba(148, 163, 184, 0.75) 2px,
+    transparent 2px,
+    transparent 18px
+  );
+  background-size: 2px 24px;
+  background-repeat: repeat;
+  animation: rain-fall 0.35s linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes rain-fall {
+  0%   { background-position: 0 -40px; }
+  100% { background-position: 0 40px; }
+}
+
+/* ===== Snowfall (barf bari) background ===== */
+.snow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+
+  background-image:
+    radial-gradient(circle, rgba(248, 250, 252, 0.9) 1px, transparent 1px),
+    radial-gradient(circle, rgba(248, 250, 252, 0.65) 1.2px, transparent 1.2px),
+    radial-gradient(circle, rgba(248, 250, 252, 0.45) 1px, transparent 1px);
+
+  background-size:
+    4px 80px,
+    6px 120px,
+    4px 100px;
+
+  background-position:
+    0 0,
+    40px -20px,
+    -30px 10px;
+
+  animation: snow-fall 12s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes snow-fall {
+  0% {
+    background-position:
+      0 0,
+      40px -20px,
+      -30px 10px;
+  }
+  100% {
+    background-position:
+      0 120px,
+      40px 100px,
+      -30px 130px;
+  }
+}
+
+/* ===== pic background: soft shine + side rays ===== */
+.pic-orange-rain {
+  position: absolute;
+  inset: -20%;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(248, 250, 252, 0.18), transparent 65%),
+    radial-gradient(circle at 20% 30%, rgba(249, 115, 22, 0.35), transparent 65%),
+    radial-gradient(circle at 80% 40%, rgba(251, 191, 36, 0.45), transparent 65%),
+    conic-gradient(
+      from 20deg,
+      rgba(249, 115, 22, 0.0) 0deg,
+      rgba(249, 115, 22, 0.25) 30deg,
+      rgba(251, 191, 36, 0.3) 60deg,
+      rgba(249, 115, 22, 0.12) 90deg,
+      rgba(249, 115, 22, 0.0) 120deg,
+      transparent 360deg
+    );
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  pointer-events: none;
+  filter: blur(1.5px);
+  animation: rays-soft-move 26s ease-in-out infinite;
+}
+
+@keyframes rays-soft-move {
+  0%   { transform: rotate(0deg) scale(1.02); opacity: 0.9; }
+  50%  { transform: rotate(12deg) scale(1.04); opacity: 1; }
+  100% { transform: rotate(0deg) scale(1.02); opacity: 0.9; }
+}
+
+/* ===== heading float + wave ===== */
+@keyframes float-heading {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes wave-letter {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.float-heading {
+  animation: float-heading 4s ease-in-out infinite;
+}
+
+.wave-heading span {
+  display: inline-block;
+}
+
+.wave-heading span:nth-child(odd) {
+  animation: wave-letter 1.2s ease-in-out infinite;
+}
+
+.wave-heading span:nth-child(even) {
+  animation: wave-letter 1.2s ease-in-out infinite;
+  animation-delay: 0.15s;
+}
+
+/* ===== icons vertical marquee (right side) ===== */
+.icons-marquee {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.icons-track {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-right: 2.5rem;
+  color: rgba(248, 250, 252, 0.45);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: icons-scroll 18s linear infinite;
+}
+
+.icons-track span {
+  white-space: nowrap;
+}
+
+@keyframes icons-scroll {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+.rain {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    transparent 0%,
+    rgba(255,255,255,0.15) 50%,
+    transparent 100%
+  );
+  background-size: 2px 18px;
+  animation: rain-fall 0.7s linear infinite;
+  opacity: 0.25;
+}
+
+@keyframes rain-fall {
+  from {
+    background-position: 0 -100%;
+  }
+  to {
+    background-position: 0 100%;
+  }
+}
+.pic-orange-rain {
+  position: absolute;
+  inset: -18%;
+  border-radius: 9999px;
+  overflow: hidden;
+
+  /* center se strong orange light + outer dark vignette */
+  background:
+    radial-gradient(circle, rgba(249, 115, 22, 1) 0%, rgba(249, 115, 22, 0.9) 28%, rgba(15, 23, 42, 0.96) 65%, rgba(2, 6, 23, 1) 100%);
+
+  box-shadow:
+    0 0 40px rgba(249, 115, 22, 0.9),
+    0 0 90px rgba(248, 250, 252, 0.12);
+
+  mix-blend-mode: normal;
+  opacity: 1;
+  pointer-events: none;
+  filter: blur(0.6px);
+}
+/* Skills Section Grid/Jali */
+@keyframes grid-float-slow {
+  0%, 100% { 
+    transform: translateX(0px) translateY(0px) scale(1); 
+    opacity: 0.2;
+  }
+  33% { 
+    transform: translateX(8px) translateY(-4px) scale(1.02); 
+    opacity: 0.3; 
+  }
+  66% { 
+    transform: translateX(-6px) translateY(6px) scale(1.01); 
+    opacity: 0.25;
+  }
+}
+
+.bg-grid-black-orange {
+  background-image: 
+    /* Vertical lines */
+    linear-gradient(rgba(249,115,22,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249,115,22,0.15) 1px, transparent 1px),
+    /* Diagonal jali pattern */
+    linear-gradient(45deg, rgba(249,115,22,0.08) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(249,115,22,0.08) 1px, transparent 1px);
+  background-size: 35px 35px, 35px 35px, 25px 25px, 25px 25px;
+}
