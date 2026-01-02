@@ -63,8 +63,24 @@ export default function Footer() {
             <Youtube size={22} />
           </a>
         </div>
+<div className="flex items-center gap-2 justify-center md:justify-end">
+  <a
+    href="https://validator.w3.org/nu/?doc=https://my-port-folio-ochre.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="https://www.w3.org/Icons/valid-html20"
+      alt="Valid HTML5"
+      width="88"
+      height="31"
+      className="hover:opacity-80 transition"
+    />
+  </a>
+</div>
 
       </div>
+      
     </footer>
   );
 }
