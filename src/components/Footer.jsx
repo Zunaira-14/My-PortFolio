@@ -68,16 +68,23 @@ export default function Footer() {
     href="https://validator.w3.org/nu/?doc=https://my-port-folio-ochre.vercel.app/"
     target="_blank"
     rel="noopener noreferrer"
+    className="relative inline-block"
   >
+    {/* Green big tick */}
+    <span className="absolute -top-3 -right-3 flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-white text-lg shadow-lg ring-2 ring-white">
+      ✓
+    </span>
+
     <img
-      src="https://www.w3.org/Icons/valid-html20"
+      src="https://www.vectorlogo.zone/logos/w3c_validator/w3c_validator-ar21.svg"
       alt="Valid HTML5"
       width="88"
       height="31"
-      className="hover:opacity-80 transition"
+      className="hover:opacity-80 transition bg-white rounded-lg"
     />
   </a>
 </div>
+
 
       </div>
       
