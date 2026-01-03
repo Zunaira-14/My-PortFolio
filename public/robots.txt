@@ -3,4 +3,8 @@ User-agent: *
 Disallow: /admin/
 Allow: /
 
+User-agent: *
+Allow: /
 
+Sitemap: https://my-port-folio-ochre.vercel.app/sitemap.xml
+ 
