@@ -264,7 +264,7 @@ const Home = () => {
               View Projects
             </Link>
             <a
-              href="/cv.portfolio.PNG"
+              href="/Zunaira-Abid-CV.png"
               download="Zunaira-Abid-CV.png"
               className="border border-[#F97316] hover:bg-[#F97316] text-amber-50 font-semibold px-6 py-3 rounded-lg shadow-md transition text-center inline-block"
             >
