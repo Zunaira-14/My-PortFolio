@@ -112,6 +112,7 @@ const roles = [
   "MERN Stack Developer",
   "Full‑Stack JavaScript Developer",
   "Problem Solver & Debugging Enthusiast",
+  "SEO Experties"
 ];
 
 const roleVariants = {
@@ -210,13 +211,18 @@ const Home = () => {
               <p className="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed">
                 Designing and building reliable, user‑focused web applications
                 with a strong emphasis on{" "}
-                <span className="text-orange-300 font-semibold">
+                <span className="text-orange-400 font-semibold">
                   clean architecture, performance and maintainable code
                 </span>
+               
                 . Turning ideas into production‑ready products using modern
                 JavaScript tools, scalable APIs and intuitive interfaces that
-                feel fast, polished and consistent.
+                feel fast, polished and consistent.MERN Stack Developer — Building Modern Web Applications for Startups & Businesses
+              <span className="text-orange-400 font-semibold">
+                    SEO optimized structure, search visibility and performance improvements
+                </span>
               </p>
+              <br/>
             </motion.div>
 
             {/* RIGHT: image */}

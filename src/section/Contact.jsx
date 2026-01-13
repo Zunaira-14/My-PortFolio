@@ -31,11 +31,21 @@ const Contact = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:8000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      // const res = await fetch("http://localhost:8000/api/contact", {
+      // const res = await fetch("https://zunaira-port-folio-backend.vercel.app/", {
+      // const res = await fetch("https://zunaira-port-folio-backend.vercel.app/", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(formData),
+      // });
+const res = await fetch(
+  "https://zunaira-port-folio-backend.vercel.app/api/contact",
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  }
+);
 
       const data = await res.json();
 

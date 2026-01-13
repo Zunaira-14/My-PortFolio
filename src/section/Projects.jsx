@@ -36,11 +36,32 @@ const projectData = [
     live: "https://ecommerce-branding-site-46l8.vercel.app",
     code: "https://github.com/Zunaira-14/ecommerce-branding-site.git",
     tags: ["MERN", "Fullstack"],
-    features: ["User Login System", "Shopping Cart", "Admin Panel"],
+    features: ["User Login System", "Shopping Cart", "Admin Panel",],
   },
+    {
+    id: 4,
+    title: "Portfolio Website",
+    description:
+      "Personal portfolio website built using MERN stack with modern UI & dynamic content.",
+    image: "myportfolio.png",
+    live: "https://my-port-folio-ochre.vercel.app/",
+    code: "https://github.com/Zunaira-14/My-PortFolio.git",
+    tags: ["MERN", "Fullstack","SEO"],
+    features: ["Modern UI", "SEO Optimized", "Dynamic Projects Section",],
+  },
+  {
+    id: 5,
+    title: "Tic Tac Toe Game",
+    description:
+      "A simple and clean tic-tac-toe game built using HTML, CSS and JavaScript.",
+    image: "tictactoe.png",
+    live: "https://tic-tac-toe-dusky-ten-48.vercel.app/",
+    code: "https://github.com/Zunaira-14/Tic-Tac-Toe.git",
+    tags: ["UI"],
+    features: ["Interactive UI", "Winner Detection", "Restart Option","using simple method"],}
 ];
 
-const tagsList = ["All", "React", "MERN", "Fullstack", "UI"];
+const tagsList = ["All", "React", "MERN", "Fullstack", "UI","SEO"];
 
 // ================= COMPONENT =================
 const Projects = () => {
@@ -75,7 +96,7 @@ const Projects = () => {
           Explore my advanced and interactive apps & UI designs.
         </p>
 
-        <div className="flex justify-center gap-2 flex-wrap">
+        <div className="flex justify-center gap-2 flex-wrap ">
           {tagsList.map((tag) => (
             <button
               key={tag}
