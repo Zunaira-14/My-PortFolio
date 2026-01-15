@@ -45,7 +45,7 @@ function NavBar() {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img
-              src="/zlogo.png"
+              src="/zlogo.webp"
               alt="Zunaira Abid"
               className="h-10 w-10 rounded-full object-cover hover:scale-105 transition"
             />

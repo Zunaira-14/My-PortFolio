@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import aiCert from "/AIcertificate.PNG";
-import mernCert from "/mernstack-certificate.png";
+import aiCert from "/AIcertificate.webp";
+import mernCert from "/mernstack-certificate.webp";
 
 export default function Certifications() {
   const certificates = [

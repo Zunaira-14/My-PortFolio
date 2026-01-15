@@ -235,7 +235,7 @@ const Home = () => {
                 <div className="absolute -inset-4 bg-gradient-to-tr from-orange-500/40 via-pink-500/30 to-yellow-400/40 blur-3xl rounded-full -z-10" />
                 <div className="bg-[#020617] border border-orange-400/40 rounded-full p-3 shadow-2xl shadow-black/60 relative">
                  <img
-  src="/portfolio.jpg"
+  src="/portfolio.webp"
   alt="Zunaira Abid"
   title="Zunaira Abid"
   loading="lazy"
@@ -270,7 +270,7 @@ const Home = () => {
               View Projects
             </Link>
             <a
-              href="/Zunaira-Abid-CV.png"
+              href="/Zunaira-Abid-CV.webp"
               download="Zunaira-Abid-CV.png"
               className="border border-[#F97316] hover:bg-[#F97316] text-amber-50 font-semibold px-6 py-3 rounded-lg shadow-md transition text-center inline-block"
             >
