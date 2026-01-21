@@ -1,79 +1,54 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  // Scroll to top on page load
+  const formRef = useRef();
+  const [status, setStatus] = useState("");
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [status, setStatus] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setStatus("Sending...");
 
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      setStatus("❌ All fields are required!");
-      return;
-    }
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const adminTemplate = import.meta.env.VITE_EMAILJS_TEMPLATE_ADMIN_ID;
+    const userTemplate = import.meta.env.VITE_EMAILJS_TEMPLATE_USER_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    try {
-      // const res = await fetch("http://localhost:8000/api/contact", {
-      // const res = await fetch("https://zunaira-port-folio-backend.vercel.app/", {
-      // const res = await fetch("https://zunaira-port-folio-backend.vercel.app/", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(formData),
-      // });
-const res = await fetch(
-  "https://zunaira-port-folio-backend.vercel.app/api/contact",
-  {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(formData),
-  }
-);
-
-      const data = await res.json();
-
-      if (res.ok) {
+    // 1) Send to Admin
+    emailjs.sendForm(serviceId, adminTemplate, formRef.current, publicKey)
+      .then(() => {
+        // 2) Send auto reply to user
+        return emailjs.sendForm(serviceId, userTemplate, formRef.current, publicKey);
+      })
+      .then(() => {
         setStatus("✅ Message sent successfully!");
-        setFormData({ name: "", email: "", subject: "", message: "" });
-      } else {
-        setStatus("❌ Failed: " + (data.error || "Unknown error"));
-      }
-    } catch (err) {
-      console.error(err);
-      setStatus("⚠️ Server not responding");
-    }
+        formRef.current.reset();
+      })
+      .catch((error) => {
+        console.error(error);
+        setStatus("❌ Failed to send. Try again.");
+      });
   };
 
   return (
-    <section className="mt-30 mb-20 pt-20 pb-20 rounded-3xl   py-16 px-4 sm:px-8 md:px-12">
-<Helmet>
-  <title>Contact | Zunaira Abid – Web Developer</title>
-  <meta
-    name="description"
-    content="Get in touch with Zunaira Abid for web development projects, freelance work and remote opportunities."
-  />
-</Helmet>
+    <section className="mt-30 mb-20 pt-20 pb-20 rounded-3xl py-16 px-4 sm:px-8 md:px-12">
+      <Helmet>
+        <title>Contact | Zunaira Abid – Web Developer</title>
+        <meta
+          name="description"
+          content="Get in touch with Zunaira Abid for web development projects, freelance work and remote opportunities."
+        />
+      </Helmet>
 
-      <div className="max-w-5xl mx-auto bg-gradient-to-br  from-[#030303] via-[#4f4f51] to-[#313131]  border-slate-800 rounded-3xl shadow-xl">
-      <h1 className="text-5xl text-orange-400 font-bold mb-10 text-center pt-30">Contact Me</h1>
-        {/* Header */}
+      <div className="max-w-5xl mx-auto bg-gradient-to-br from-[#030303] via-[#4f4f51] to-[#313131] border-slate-800 rounded-3xl shadow-xl">
+        <h1 className="text-5xl text-orange-400 font-bold mb-10 text-center pt-30">Contact Me</h1>
+
         <div className="px-6 sm:px-10 pt-8 text-center md:text-left">
           <p className="text-xs uppercase tracking-[0.2em] text-orange-300 mb-2">Get in touch</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-orange-400 mb-3">
@@ -84,9 +59,7 @@ const res = await fetch(
           </p>
         </div>
 
-        {/* Grid Layout */}
         <div className="grid md:grid-cols-[1.1fr,1.4fr] gap-8 px-6 sm:px-10 pb-10 pt-8">
-          {/* Left Column: Contact Info */}
           <div className="space-y-5 text-sm sm:text-base">
             <div>
               <h3 className="text-orange-300 font-semibold mb-1">Email</h3>
@@ -95,10 +68,7 @@ const res = await fetch(
                   zunairaabid140@gmail.com
                 </a>
               </p>
-            </div> 
-
-            
-
+            </div>
             <div>
               <h3 className="text-orange-300 font-semibold mb-1">Availability</h3>
               <p className="text-gray-300">
@@ -107,34 +77,32 @@ const res = await fetch(
             </div>
           </div>
 
-          {/* Right Column: Contact Form */}
           <form
+            ref={formRef}
             onSubmit={handleSubmit}
-            className=" border border-slate-800 rounded-2xl p-4 sm:p-6 space-y-4 shadow-inner"
+            className="border border-slate-800 rounded-2xl p-4 sm:p-6 space-y-4 shadow-inner"
           >
             <div className="space-y-1">
-              <label className="text-sm text-gray-200" htmlFor="name">Name</label>
+              <label className="text-sm text-gray-200" htmlFor="from_name">Name</label>
               <input
-                id="name"
-                name="name"
+                id="from_name"
+                name="from_name"
                 type="text"
                 placeholder="Your name"
-                value={formData.name || ""}
-                onChange={handleChange}
-                className="w-full p-3 rounded-lg  text-white border border-gray-950 focus:border-[#F97316] focus:ring-2 focus:ring-[#F97316] outline-none text-sm transition"
+                className="w-full p-3 rounded-lg text-white border border-gray-950 focus:border-[#F97316] focus:ring-2 focus:ring-[#F97316] outline-none text-sm transition"
+                required
               />
             </div>
 
             <div className="space-y-1">
-              <label className="text-sm text-gray-200" htmlFor="email">Email</label>
+              <label className="text-sm text-gray-200" htmlFor="from_email">Email</label>
               <input
-                id="email"
-                name="email"
+                id="from_email"
+                name="from_email"
                 type="email"
                 placeholder="your@email.com"
-                value={formData.email || ""}
-                onChange={handleChange}
-                className="w-full p-3 rounded-lg  text-white border border-gray-950 focus:border-[#F97316] focus:ring-2 focus:ring-[#F97316] outline-none text-sm transition"
+                className="w-full p-3 rounded-lg text-white border border-gray-950 focus:border-[#F97316] focus:ring-2 focus:ring-[#F97316] outline-none text-sm transition"
+                required
               />
             </div>
 
@@ -145,9 +113,7 @@ const res = await fetch(
                 name="subject"
                 type="text"
                 placeholder="Subject"
-                value={formData.subject || ""}
-                onChange={handleChange}
-                className="w-full p-3 rounded-lg  text-white border border-gray-950 focus:border-[#F97316] focus:ring-2 focus:ring-[#F97316] outline-none text-sm transition"
+                className="w-full p-3 rounded-lg text-white border border-gray-950 focus:border-[#F97316] focus:ring-2 focus:ring-[#F97316] outline-none text-sm transition"
               />
             </div>
 
@@ -158,15 +124,14 @@ const res = await fetch(
                 name="message"
                 rows={5}
                 placeholder="Tell me a bit about your project or question..."
-                value={formData.message || ""}
-                onChange={handleChange}
-                className="w-full p-3 rounded-lg  text-white border border-gray-950 focus:border-[#F97316] focus:ring-2 focus:ring-[#F97316] outline-none text-sm resize-none transition"
+                className="w-full p-3 rounded-lg text-white border border-gray-950 focus:border-[#F97316] focus:ring-2 focus:ring-[#F97316] outline-none text-sm resize-none transition"
+                required
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="w-full  bg-[#F97316] hover:bg-[#FDBA74] text-black font-semibold py-3 rounded-lg shadow-lg shadow-orange-500/30 transition"
+              className="w-full bg-[#F97316] hover:bg-[#FDBA74] text-black font-semibold py-3 rounded-lg shadow-lg shadow-orange-500/30 transition"
             >
               Send Message
             </button>
