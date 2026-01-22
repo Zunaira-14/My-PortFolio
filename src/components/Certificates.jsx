@@ -86,7 +86,7 @@ export default function Certifications() {
                  flex flex-col gap-4"
       onClick={(e) => e.stopPropagation()}
     >
-      <div className="w-full max-h-[70vh] flex items-center justify-center bg-slate-500 rounded-xl overflow-hidden">
+      <div className="w-full max-h-[60vh] flex items-center justify-center bg-slate-500 rounded-xl overflow-hidden">
         <img
           src={certificates[openIndex].img}
           alt={certificates[openIndex].title}

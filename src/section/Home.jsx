@@ -51,6 +51,7 @@ const HeadingAnimated = () => {
     </h1>
   );
 };
+
 <Helmet>
   <title>Zunaira Abid | MERN Stack Developer Portfolio</title>
   <meta
@@ -136,25 +137,32 @@ const Home = () => {
 
   return (
     <div className="body-orange-rain relative min-h-screen overflow-hidden ">
+      
+      <Helmet>
+  <title>Zunaira Abid | Web Developer Portfolio</title>
+  <meta
+    name="description"
+    content="Zunaira Abid is a web developer specializing in React, Tailwind CSS, and modern web applications. View projects and contact for work."
+  />
+
+  <meta name="keywords" content="Web Developer, React Developer, Frontend Developer, Portfolio, Backend Developer, SEO Experties" />
+
+  <meta name="author" content="Zunaira Abid" />
+</Helmet>
+
       {/* === Background Video + overlays === */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
-        {/* <video
-          className="w-full h-full object-cover"
-          src="homebg.mp4"   
-          autoPlay
-          loop
-          muted
-          playsInline
-        /> */}
-        <video
+<video
   className="w-full h-full object-cover"
-  // src="https://player.cloudinary.com/embed/?cloud_name=dngjyqkzp&public_id=homebg.mp4_t0eka9&profile=cld-default"
   src="https://res.cloudinary.com/dngjyqkzp/video/upload/v1767116240/homebg.mp4_t0eka9.mp4"
   autoPlay
   loop
   muted
   playsInline
+  aria-hidden="true"
+  role="presentation"
 />
+
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 " />
         {/* Optional: lightning + rain effect */}
@@ -238,7 +246,8 @@ const Home = () => {
   src="/portfolio.webp"
   alt="Zunaira Abid"
   title="Zunaira Abid"
-  loading="lazy"
+  loading="eager"
+  fetchpriority="high"
   className="
     h-24 w-24
     sm:h-28 sm:w-28
@@ -251,8 +260,6 @@ const Home = () => {
     duration-500
   "
 />
-
-
                 </div>
               </div>
             </motion.div>

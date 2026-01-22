@@ -137,6 +137,7 @@ const Projects = () => {
                 <PhotoView src={`/${project.image}`}>
                   <img
                     src={`/${project.image}`}
+                    loading="lazy"
                     alt={`${project.title} – MERN Stack web application by Zunaira Abid`}
                     className="w-full h-full object-cover cursor-pointer"
                   />

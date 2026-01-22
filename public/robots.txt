@@ -6,5 +6,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://my-port-folio-ochre.vercel.app/sitemap.xml
- 
+Sitemap: https://zunaira-abid-mernstack-developer.vercel.app/sitemap.xml

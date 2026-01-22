@@ -19,6 +19,7 @@ const Contact = () => {
     const adminTemplate = import.meta.env.VITE_EMAILJS_TEMPLATE_ADMIN_ID;
     const userTemplate = import.meta.env.VITE_EMAILJS_TEMPLATE_USER_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+console.log("PUBLIC KEY:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
     // 1) Send to Admin
     emailjs.sendForm(serviceId, adminTemplate, formRef.current, publicKey)
@@ -38,11 +39,14 @@ const Contact = () => {
 
   return (
     <section className="mt-30 mb-20 pt-20 pb-20 rounded-3xl py-16 px-4 sm:px-8 md:px-12">
+
       <Helmet>
-        <title>Contact | Zunaira Abid – Web Developer</title>
+        <title> Zunaira Abid – mern-stack Developer</title>
         <meta
           name="description"
-          content="Get in touch with Zunaira Abid for web development projects, freelance work and remote opportunities."
+          content="Get in touch with Zunaira Abid for web development projects, freelance work and remote opportunities
+          and for SEO Services."
+          
         />
       </Helmet>
 
