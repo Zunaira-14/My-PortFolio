@@ -41,7 +41,7 @@ function NavBar() {
         bg-gradient-to-r from-orange-600/80 via-orange-500/70 to-amber-400/70
         border border-white/10 shadow-lg hover:shadow-orange-500/40 transition">
 
-        <div className="flex items-center justify-between px-4 sm:px-6 py-2 sm:py-3">
+        <div className="flex items-center justify-between px-30 sm:px-6 py-2 sm:py-3">
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img

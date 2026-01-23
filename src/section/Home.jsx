@@ -109,11 +109,10 @@ const sectionItem = {
 
 /* ===== Roles list (smooth vertical scroll) ===== */
 const roles = [
-  "Web Developer",
   "MERN Stack Developer",
-  "Full‑Stack JavaScript Developer",
-  "Problem Solver & Debugging Enthusiast",
-  "SEO Experties"
+  "SEO Expert",
+  "Problem Solver",
+  " Debugging Enthusiast" 
 ];
 
 const roleVariants = {
@@ -217,19 +216,24 @@ const Home = () => {
               </div>
 
               <p className="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed">
-                Designing and building reliable, user‑focused web applications
-                with a strong emphasis on{" "}
-                <span className="text-orange-400 font-semibold">
-                  clean architecture, performance and maintainable code
-                </span>
-               
-                . Turning ideas into production‑ready products using modern
-                JavaScript tools, scalable APIs and intuitive interfaces that
-                feel fast, polished and consistent.MERN Stack Developer — Building Modern Web Applications for Startups & Businesses
-              <span className="text-orange-400 font-semibold">
-                    SEO optimized structure, search visibility and performance improvements
-                </span>
-              </p>
+  Designing and building reliable, user‑focused web applications with a strong
+  emphasis on{" "}
+  <span className="text-orange-400 font-semibold">
+    clean architecture, performance and maintainable code
+  </span>
+  , turning ideas into production‑ready products using modern JavaScript tools,
+  scalable APIs and intuitive interfaces that feel fast, polished and consistent.
+</p>
+
+<p className="mt-3 text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed">
+  MERN Stack Developer — building modern web applications for startups and
+  businesses with{" "}
+  <span className="text-orange-400 font-semibold">
+    SEO optimized structure, search visibility and performance improvements
+  </span>
+  .
+</p>
+
               <br/>
             </motion.div>
 
