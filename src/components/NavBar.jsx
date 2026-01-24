@@ -136,7 +136,7 @@ function NavBar() {
             </a>
 
             <a href={githubUrl} target="_blank" rel="noopener noreferrer"  aria-label="Zunaira Abid GitHub Profile">
-              <svg className="w-6 h-6 text-white hover:text-black" fill="currentColor" viewBox="0 0 24 24" >
+              <svg className="w-6 h-6 text-white hover:text-black" fill="currentColor"classname="hover:text-[#F97316] transition-colorsduration-300" viewBox="0 0 24 24" >
                 <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55v-2c-3.19.7-3.87-1.54-3.87-1.54-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.95.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.71 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.52.12-3.17 0 0 .97-.31 3.18 1.19a11 11 0 012.9-.39c.98 0 1.97.13 2.9.39 2.2-1.5 3.17-1.19 3.17-1.19.64 1.65.24 2.87.12 3.17.74.81 1.2 1.84 1.2 3.1 0 4.44-2.68 5.42-5.24 5.7.41.35.77 1.05.77 2.12v3.15c0 .3.2.66.79.55C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/>
               </svg>
             </a>
