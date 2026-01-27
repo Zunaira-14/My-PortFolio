@@ -49,7 +49,7 @@ const projectData = [
       "Personal portfolio website built using MERN stack with modern UI & dynamic content.",
     image: "myportfolio.webp",
     alt: "Personal developer portfolio website MERN stack React Tailwind SEO optimized projects showcase",
-    live: "https://my-port-folio-ochre.vercel.app/",
+    live: "https://zunaira-abid-mernstack-developer.vercel.app/",
     code: "https://github.com/Zunaira-14/My-PortFolio.git",
     tags: ["MERN", "Fullstack","SEO"],
     features: ["Modern UI", "SEO Optimized", "Dynamic Projects Section"],
