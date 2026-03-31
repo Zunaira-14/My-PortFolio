@@ -41,7 +41,7 @@ const projectData = [
     live: "https://zain-jathol.vercel.app/",
     // code: "https://github.com/Zunaira-14/My-PortFolio.git",
     tags: ["MERN", "Fullstack","SEO"],
-    features: ["Modern UI", "SEO Optimized", "Dynamic Projects Section"],
+    features: ["Modern UI",  "Dynamic Projects Section"],
   },
   {
     id: 4,
