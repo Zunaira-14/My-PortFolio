@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import aiCert from "/AIcertificate.webp";
 import mernCert from "/mernstack-certificate.webp";
+import seoCert from "/seo-certificate.webp";
 
 export default function Certifications() {
   const certificates = [
@@ -20,6 +21,13 @@ export default function Certifications() {
       ribbon: "Full Stack Pro",
       loading: "eager",
     },
+    {
+      img: seoCert,
+      title: "SEO Certification",
+      desc: "Search Engine Optimization Training",
+      ribbon: "SEO Specialist",
+      loading: "eager",
+    },
   ];
 
   const [openIndex, setOpenIndex] = useState(null);
@@ -29,13 +37,13 @@ export default function Certifications() {
       id="certifications"
       className="py-12 mt-12 px-4 bg-gradient-to-b rounded-2xl"
     >
-      <div className="max-w-md md:max-w-2xl mx-auto">
+      <div className="max-w-md md:max-w-4xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold mb-5 text-center text-[#F97316]">
           Certifications
         </h2>
 
-        {/* Mobile: 1 column, Desktop: 2 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Mobile: 1, Tablet: 2, Desktop: 3 per row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {certificates.map((cert, index) => (
             <article
               key={index}
@@ -55,7 +63,7 @@ export default function Certifications() {
                   src={cert.img}
                   alt={cert.title}
                   title={cert.title}
-                  loading="eager"
+                  loading={cert.loading || "eager"}
                   className="w-full max-w-full h-auto object-contain transition-transform duration-200 group-hover:scale-105"
                 />
               </div>

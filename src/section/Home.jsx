@@ -72,6 +72,7 @@ const skills = [
   { name: "Express.js", icon: "devicon-express-original", level: 60 },
   { name: "Tailwind", icon: "devicon-tailwindcss-plain", level: 85 },
   { name: "GitHub", icon: "devicon-github-original", level: 75 },
+  
 ];
 
 /* ===== Framer Motion Variants ===== */
@@ -215,20 +216,20 @@ const Home = () => {
                 </div>
               </div>
 
-              <p className="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed">
+              <p className="text-gray-200  text-bold text-base sm:text-lg md:text-xl leading-relaxed">
   Designing and building reliable, user‑focused web applications with a strong
   emphasis on{" "}
-  <span className="text-orange-400 font-semibold">
+  <span className="text-orange-400 text-bold font-semibold">
     clean architecture, performance and maintainable code
   </span>
   , turning ideas into production‑ready products using modern JavaScript tools,
   scalable APIs and intuitive interfaces that feel fast, polished and consistent.
 </p>
 
-<p className="mt-3 text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed">
+<p className="mt-3 text-gray-200 text-bold text-base sm:text-lg md:text-xl leading-relaxed">
   MERN Stack Developer — building modern web applications for startups and
   businesses with{" "}
-  <span className="text-orange-400 font-semibold">
+  <span className="text-orange-400 text-bold font-semibold">
     SEO optimized structure, search visibility and performance improvements
   </span>
   .
@@ -281,8 +282,8 @@ const Home = () => {
               View Projects
             </Link>
             <a
-              href="/Zunaira-Abid-CV.webp"
-              download="Zunaira-Abid-CV.png"
+              href="/Zunaira CV.pdf"
+              download="Zunaira-Abid-CV.pdf"
               className="border border-[#F97316] hover:bg-[#F97316] text-amber-50 font-semibold px-6 py-3 rounded-lg shadow-md transition text-center inline-block"
             >
               Download CV

@@ -19,31 +19,8 @@ const projectData = [
     tags: ["MERN", "Fullstack"],
     features: ["Responsive UI", "User Authentication", "Cart & Checkout"],
   },
-  {
+ {
     id: 2,
-    title: "Food Recipe App",
-    description: "A modern food ordering UI built with React and TailwindCSS.",
-    image: "food-recipe.webp", 
-    alt: "Modern food recipe app UI built with React TailwindCSS featuring recipe search and favorites",
-    live: "https://food-recipe-app-zunaira-abids-projects.vercel.app",
-    code: "https://github.com/Zunaira-14/food-recipe-app.git",
-    tags: ["React", "UI", "Fullstack"],
-    features: ["Modern UI/UX", "Search Recipes", "Save Favorites"],
-  },
-  {
-    id: 3,
-    title: "Ecommerce App",
-    description:
-      "Ecommerce website built with React, Tailwind, Express and MongoDB.",
-    image: "ecom.webp",
-    alt: "Fullstack ecommerce website MERN stack with React Tailwind showing shopping cart admin panel",
-    live: "https://ecommerce-branding-site-46l8.vercel.app",
-    code: "https://github.com/Zunaira-14/ecommerce-branding-site.git",
-    tags: ["MERN", "Fullstack"],
-    features: ["User Login System", "Shopping Cart", "Admin Panel"],
-  },
-  {
-    id: 4,
     title: "Portfolio Website",
     description:
       "Personal portfolio website built using MERN stack with modern UI & dynamic content.",
@@ -54,6 +31,31 @@ const projectData = [
     tags: ["MERN", "Fullstack","SEO"],
     features: ["Modern UI", "SEO Optimized", "Dynamic Projects Section"],
   },
+ {
+    id: 3,
+    title: "Client Portfolio Website",
+    description:
+      " portfolio website for client built using MERN stack with modern UI & dynamic content.",
+    image: "clientportfolio.webp",
+    alt: "Personal developer portfolio website MERN stack React Tailwind SEO optimized projects showcase",
+    live: "https://zain-jathol.vercel.app/",
+    // code: "https://github.com/Zunaira-14/My-PortFolio.git",
+    tags: ["MERN", "Fullstack","SEO"],
+    features: ["Modern UI", "SEO Optimized", "Dynamic Projects Section"],
+  },
+  {
+    id: 4,
+    title: "Ecommerce App",
+    description:
+      "Ecommerce website built with React, Tailwind, Express and MongoDB.",
+    image: "ecom.webp",
+    alt: "Fullstack ecommerce website MERN stack with React Tailwind showing shopping cart admin panel",
+    live: "https://ecommerce-branding-site-46l8.vercel.app",
+    code: "https://github.com/Zunaira-14/ecommerce-branding-site.git",
+    tags: ["MERN", "Fullstack"],
+    features: ["User Login System", "Shopping Cart", "Admin Panel"],
+  },
+  
   {
     id: 5,
     title: "Tic Tac Toe Game",
@@ -65,7 +67,18 @@ const projectData = [
     code: "https://github.com/Zunaira-14/Tic-Tac-Toe.git",
     tags: ["UI"],
     features: ["Interactive UI", "Winner Detection", "Restart Option"],
-  }
+  },
+  {
+    id: 6,
+    title: "Food Recipe App",
+    description: "A modern food ordering UI built with React and TailwindCSS.",
+    image: "food-recipe.webp", 
+    alt: "Modern food recipe app UI built with React TailwindCSS featuring recipe search and favorites",
+    live: "https://food-recipe-app-zunaira-abids-projects.vercel.app",
+    code: "https://github.com/Zunaira-14/food-recipe-app.git",
+    tags: ["React", "UI", "Fullstack"],
+    features: ["Modern UI/UX", "Search Recipes", "Save Favorites"],
+  },
 ];
 
 

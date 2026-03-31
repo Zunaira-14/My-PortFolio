@@ -46,22 +46,8 @@ export default function Footer() {
           >
             <LinkedinIcon size={22} />
           </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#1DA1F2] transition-colors duration-300"
-          >
-            <Twitter size={22} />
-          </a>
-          <a
-            href="https://youtube.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#FF0000] transition-colors duration-300"
-          >
-            <Youtube size={22} />
-          </a>
+          
+          
         </div>
 <div className="flex items-center gap-2 justify-center md:justify-end">
   <a
